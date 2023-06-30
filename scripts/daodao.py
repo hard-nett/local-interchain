@@ -14,7 +14,7 @@ from helpers.transactions import RequestBuilder
 from util_base import API_URL
 
 KEY_NAME = "acc0"
-chain_id = "localjuno-1"
+chain_id = "localterp-1"
 
 
 def main():
@@ -57,12 +57,12 @@ def main():
     }
     encoded_prop_msg = CosmWasm.base64_encode_msg(module_msg)
 
-    voting_msg = '{"owner":{"core_module":{}},"denom":"ujuno"}'
+    voting_msg = '{"owner":{"core_module":{}},"denom":"uterp"}'
     encoded_voting_msg = CosmWasm.base64_encode_msg(voting_msg)
 
     cw_core_init_msg = CosmWasm.remove_msg_spaces(
         {
-            "admin": "juno1efd63aw40lxf3n4mhf7dzhjkr453axurv2zdzk",
+            "admin": "terp1efd63aw40lxf3n4mhf7dzhjkr453axurajg60e",
             "automatically_add_cw20s": True,
             "automatically_add_cw721s": True,
             "description": "V2_DAO",

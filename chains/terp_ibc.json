@@ -1,14 +1,13 @@
 {    
     "chains": [
         {
-            "name": "juno",            
-            "chain_id": "localjuno-1",
-            "denom": "ujuno",
-            "binary": "junod",
-            "bech32-prefix": "juno",
+            "name": "terpnetwork",            
+            "chain_id": "localterp-1",
+            "denom": "uterp",
+            "binary": "terpd",
+            "bech32-prefix": "terp",
             "docker-image": {
-                "repository": "ghcr.io/cosmoscontracts/juno-e2e",
-                "version": "v14.1.0"
+                "version": "v2.0.0"
             },
             "use-new-genesis-command": false,
             "gas-prices": "0%DENOM%",
@@ -20,9 +19,9 @@
             "number-node": 0,
             "blocks-ttl": -1,
             "block-time": "500ms",
-            "ibc-paths": ["juno-ibc-1"],
+            "ibc-paths": ["terp-ibc-1"],
             "debugging": true,            
-            "encoding-options": ["juno"],
+            "encoding-options": ["terp"],
             "genesis": {
                 "modify": [
                     {
@@ -41,13 +40,13 @@
                 "accounts": [
                     {
                         "name": "acc0",
-                        "address": "juno1hj5fveer5cjtn4wd6wstzugjfdxzl0xps73ftl",
+                        "address": "terp1hj5fveer5cjtn4wd6wstzugjfdxzl0xppxm7xs",
                         "amount": "10000000%DENOM%",
                         "mnemonic": "decorate bright ozone fork gallery riot bus exhaust worth way bone indoor calm squirrel merry zero scheme cotton until shop any excess stage laundry"
                     },
                     {
                         "name": "acc1",
-                        "address": "juno1efd63aw40lxf3n4mhf7dzhjkr453axurv2zdzk",
+                        "address": "terp1efd63aw40lxf3n4mhf7dzhjkr453axurajg60e",
                         "amount": "10000000%DENOM%",
                         "mnemonic": "wealth flavor believe regret funny network recall kiss grape useless pepper cram hint member few certain unveil rather brick bargain curious require crowd raise"
                     }
@@ -55,36 +54,35 @@
             }
         },
         {
-            "name": "juno",
-            "chain_id": "localjuno-2",
-            "binary": "junod",
-            "bech32-prefix": "juno",
-            "denom": "ujuno",
+            "name": "terpnetwork",
+            "chain_id": "localterp-2",
+            "binary": "terpd",
+            "bech32-prefix": "terp",
+            "denom": "uterp",
             "docker-image": {
-                "repository": "ghcr.io/cosmoscontracts/juno-e2e",
-                "version": "v14.1.0"
+                "version": "v2.0.0"
             },
             "genesis": {     
                 "accounts": [
                     {
                         "name": "second0",
-                        "address": "juno1hj5fveer5cjtn4wd6wstzugjfdxzl0xps73ftl",
+                        "address": "terp1hj5fveer5cjtn4wd6wstzugjfdxzl0xppxm7xs",
                         "amount": "10000000%DENOM%",
                         "mnemonic": "decorate bright ozone fork gallery riot bus exhaust worth way bone indoor calm squirrel merry zero scheme cotton until shop any excess stage laundry"
                     },
                     {
                         "name": "second1",
-                        "address": "juno1efd63aw40lxf3n4mhf7dzhjkr453axurv2zdzk",
+                        "address": "terp1efd63aw40lxf3n4mhf7dzhjkr453axurajg60e",
                         "amount": "10000000%DENOM%",
                         "mnemonic": "wealth flavor believe regret funny network recall kiss grape useless pepper cram hint member few certain unveil rather brick bargain curious require crowd raise"
                     }
                 ]                
             },
             "block-time": "500ms",
-            "encoding-options": ["juno"],
+            "encoding-options": ["terp"],
             "gas-prices": "0%DENOM%",
             "gas-adjustment": 2.0,
-            "ibc-paths": ["juno-ibc-1"]        
+            "ibc-paths": ["terp-ibc-1"]        
         }
     ]
 }

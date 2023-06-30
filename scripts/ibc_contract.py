@@ -9,7 +9,7 @@ Steps:
 - Compile https://github.com/0xekez/cw-ibc-example
 - Copy to ./contracts/cw_ibc_example.wasm
 
-- local-ic start ibc_juno
+- local-ic start ibc_terp
 
 - Init both contracts
 - Create a channel/connection between both (counter-1 version)
@@ -31,8 +31,8 @@ WASM_FILE_NAME = "cw_ibc_example.wasm"
 KEY_NAME = "acc0"
 KEY_NAME2 = "second0"
 
-chain_id = "localjuno-1"
-chain_id2 = "localjuno-2"
+chain_id = "localterp-1"
+chain_id2 = "localterp-2"
 
 
 def setup_env(rbs: Collection[RequestBuilder]):
@@ -84,7 +84,7 @@ def main():
 
         print("\n📤 Create Contract Connection")
         relayer.create_wasm_connection(
-            path="juno-ibc-1",
+            path="terp-ibc-1",
             src=contract_1.address,
             dst=contract_2.address,
             order="unordered",
@@ -96,12 +96,12 @@ def main():
         contract_1 = CosmWasm(
             API_URL,
             chain_id,
-            addr_override="juno14hj2tavq8fpesdwxxcu44rty3hh90vhujrvcmstl4zr3txmfvw9skjuwg8",
+            addr_override="terp14hj2tavq8fpesdwxxcu44rty3hh90vhujrvcmstl4zr3txmfvw9skqhzr5",
         )
         contract_2 = CosmWasm(
             API_URL,
             chain_id2,
-            addr_override="juno14hj2tavq8fpesdwxxcu44rty3hh90vhujrvcmstl4zr3txmfvw9skjuwg8",
+            addr_override="terp14hj2tavq8fpesdwxxcu44rty3hh90vhujrvcmstl4zr3txmfvw9skqhzr5",
         )
 
     print("\n📖 Checking Channels")
@@ -114,7 +114,7 @@ def main():
     )
 
     print("\n📨 Flush Packets...")
-    relayer.flush("juno-ibc-1", "channel-1", log_output=True)
+    relayer.flush("terp-ibc-1", "channel-1", log_output=True)
 
     # Ensure the Tx count increased += 1
     if True:

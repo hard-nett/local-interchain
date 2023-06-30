@@ -9,7 +9,7 @@ local-ic start base
 from helpers.transactions import RequestBuilder
 from util_base import API_URL
 
-chain_id = "localjuno-1"
+chain_id = "localterp-1"
 
 
 rb = RequestBuilder(API_URL, chain_id, log_output=True)
@@ -35,20 +35,20 @@ def bin_test():
 
     rb.query("bank total")
     exit(1)
-    rb.query("bank balances juno10r39fueph9fq7a6lgswu4zdsg8t3gxlq670lt0 --output=json")
+    rb.query("bank balances terp10r39fueph9fq7a6lgswu4zdsg8t3gxlqtx9gxq --output=json")
 
 
 # Test to ensure Transactions and getting that data returns properly
 def tx_test():
     res = rb.binary(
-        "tx bank send acc0 juno10r39fueph9fq7a6lgswu4zdsg8t3gxlq670lt0 500ujuno --fees 5000ujuno --node %RPC% --chain-id=%CHAIN_ID% --yes --output json --keyring-backend=test"
+        "tx bank send acc0 terp10r39fueph9fq7a6lgswu4zdsg8t3gxlqtx9gxq 500uterp --fees 5000uterp --node %RPC% --chain-id=%CHAIN_ID% --yes --output json --keyring-backend=test"
     )
     tx_data = rb.query_tx(res)
     print(tx_data)
 
     print(
         rb.query(
-            "bank balances juno10r39fueph9fq7a6lgswu4zdsg8t3gxlq670lt0 --output=json"
+            "bank balances terp10r39fueph9fq7a6lgswu4zdsg8t3gxlqtx9gxq --output=json"
         )
     )
 

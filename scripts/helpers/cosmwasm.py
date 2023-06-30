@@ -251,7 +251,7 @@ class CosmWasm:
 if __name__ == "__main__":
     CosmWasm.download_base_contracts()
 
-    cw = CosmWasm(api="http://localhost:8080", chain_id="localjuno-1")
+    cw = CosmWasm(api="http://localhost:8080", chain_id="localterp-1")
 
     cw.store_contract("acc0", os.path.join(contracts_storage_dir, "cw721_base.wasm"))
 
@@ -262,7 +262,7 @@ if __name__ == "__main__":
             "name": "name",
             "symbol": "NFT",
             # account in base.json genesis (acc0) # noqa
-            "minter": "juno1hj5fveer5cjtn4wd6wstzugjfdxzl0xps73ftl",
+            "minter": "terp1hj5fveer5cjtn4wd6wstzugjfdxzl0xppxm7xs",
         },
         label="contract",
         flags="",
@@ -275,7 +275,7 @@ if __name__ == "__main__":
         {
             "mint": {
                 "token_id": "1",
-                "owner": "juno1hj5fveer5cjtn4wd6wstzugjfdxzl0xps73ftl",
+                "owner": "terp1hj5fveer5cjtn4wd6wstzugjfdxzl0xppxm7xs",
                 "token_uri": "https://reece.sh",
             }
         },
